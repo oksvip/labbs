@@ -3,6 +3,7 @@
 namespace App\Observers;
 
 use App\Models\Topic;
+use App\Handlers\SlugTranslateHandler;
 
 // creating, created, updating, updated, saving,
 // saved,  deleting, deleted, restoring, restored
@@ -21,10 +22,5 @@ class TopicObserver
         if ( ! $topic->slug) {
             $topic->slug = app(SlugTranslateHandler::class)->translate($topic->title);
         }
-    }
-
-    public function updating(Topic $topic)
-    {
-        //
     }
 }
