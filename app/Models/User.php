@@ -8,6 +8,7 @@ use App\Models\Reply;
 use Auth;
 use Spatie\Permission\Traits\HasRoles;
 use App\Models\Traits\ActiveUserHelper;
+use App\Models\Traits\LastActivedAtHelper;
 
 class User extends Authenticatable
 {
@@ -15,7 +16,7 @@ class User extends Authenticatable
         notify as protected laravelNotify;
     }
 
-    use HasRoles, ActiveUserHelper;
+    use HasRoles, ActiveUserHelper, LastActivedAtHelper;
 
     /**
      * The attributes that are mass assignable.
