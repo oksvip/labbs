@@ -21,6 +21,7 @@ class AppServiceProvider extends ServiceProvider
         Carbon::setLocale('zh');
         Topic::observe(TopicObserver::class);
         Reply::observe(ReplyObserver::class);
+        \App\Models\Link::observe(\App\Observers\LinkObserver::class);
         if (app()->isLocal()) {
             $this->app->register(\VIACreative\SudoSu\ServiceProvider::class);
         }
