@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
-    public function root()
+    public function index()
 	{
 		return view('pages.root');
 	}
